@@ -1,0 +1,36 @@
+<header class='header private-header'>
+  <h2 class='title-task'>Tarefas</h2>
+  <img class='icon-task' src='../../../assets/lupa.svg' alt='Ícone de busca'>
+</header>
+
+<div class='task-container'>
+  <div class='tasks-list'>
+
+    <div class="kanban-desktop">
+      <h2 class='titles-list'>A FAZER</h2>
+      <app-task-field></app-task-field>
+      <app-task-field></app-task-field>
+      <app-task-field></app-task-field>
+      <h3>Ver todos</h3>
+    </div>
+
+    <div class="kanban-desktop">
+      <h2 class='titles-list'>EM PROGRESSO</h2>
+      <div class='container-task-card'>
+        <app-task-progress-card></app-task-progress-card>
+        <app-task-progress-card></app-task-progress-card>
+        <app-task-progress-card></app-task-progress-card>
+      </div>
+      <h3>Ver todos</h3>
+    </div>
+
+    <div class="kanban-desktop">
+      <h2 class='titles-list'>CONCLUÍDO</h2>
+      <app-task-field></app-task-field>
+    </div>
+
+  </div>
+</div>
+
+<app-private-footer>
+</app-private-footer>

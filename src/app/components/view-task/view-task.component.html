@@ -1,0 +1,65 @@
+<header class='header private-header'>
+  <img class='task-icon' src='../../../assets/return.svg' alt='Ícone para voltar à lista de tarefas'>
+  <img class='task-icon' src='../../../assets/ellipsis.svg' alt='Ícone para página com lista de tarefas'>
+</header>
+
+<div class='view-task-container'>
+  <div class='updated-tasks'>
+    <h1 class='view-task-title'>Desafio de design UX/UI</h1>
+    <span>Descrição descrição descrição descrição</span>
+
+    <app-task-action-button iconSrc='../../../assets/gray-calendar.svg' iconAlt='Ícone de calendário'
+      buttonText='Data dinâmica'>
+    </app-task-action-button>
+
+    <app-task-action-button iconSrc='../../../assets/tag.svg' iconAlt='Ícone de etiqueta'
+      buttonText='Nome da etiqueta dinâmico'>
+    </app-task-action-button>
+    <div>
+    </div>
+
+    <app-task-action-button iconSrc='../../../assets/paperclip.svg' iconAlt='Ícone de clips' buttonText='Anexos'>
+    </app-task-action-button>
+
+    <div class='line'></div>
+
+    <ul class='subtask'>
+      <li>
+        <app-task-action-button iconSrc='../../../assets/square.svg' iconAlt='Ícone de checkbox'
+          buttonText='Wireframes'>
+        </app-task-action-button>
+      </li>
+      <li>
+        <app-task-action-button iconSrc='../../../assets/square.svg' iconAlt='Ícone de checkbox'
+          buttonText='Apresentação'>
+        </app-task-action-button>
+      </li>
+    </ul>
+
+    <app-task-action-button iconSrc='../../../assets/arrow-right.svg' iconAlt='Ícone de adicionar subtarefa'
+      buttonText='Adicionar subtarefas'>
+    </app-task-action-button>
+
+    <div class='line'></div>
+    <label for="comment"></label>
+    <input class='input-comment' type="text" placeholder='Adicionar comentário' name="comment"
+      [value]="member.comment" />
+
+    <div class='container-comment'>
+      <div>
+        <img class='avatar-img' [src]="member.profile" alt='Imagem do perfil'>
+      </div>
+      <div>
+        <div class='name-section'>
+          <strong>{{ member.firstName }}</strong>
+          <p>3 dias atrás</p>
+        </div>
+        <p class='comment'>{{ member.comment }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-private-footer>
+
+</app-private-footer>

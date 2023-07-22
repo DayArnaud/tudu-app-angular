@@ -1,0 +1,100 @@
+.header {
+  width: 100%;
+  height: 5rem;
+}
+
+.private-header {
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+
+.title-task {
+  flex-grow: 1;
+  text-align: center;
+
+  color: var(--black);
+  font-weight: 500;
+}
+
+.icon-task {
+  width: 1.5rem;
+  height: 1.5rem;
+
+  margin-left: 6rem;
+}
+
+.task-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+
+  width: 100%;
+  min-height: calc(100vh - 10.5rem);
+  height: fit-content;
+  padding: 0 2rem 7rem;
+
+  background: linear-gradient(to top, #e2dfdf, white);
+}
+
+.tasks-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .2rem;
+
+  width: 100%;
+}
+
+.kanban-desktop {
+  width: 100%;
+  max-width: 450px;
+}
+
+.titles-list {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--dark-blue);
+  margin-bottom: 1rem;
+}
+
+.kanban-desktop h3 {
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: right;
+}
+
+.container-task-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  height: 7rem;
+  overflow: scroll;
+}
+
+@media(min-width:992px) {
+
+  .tasks-list {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  .container-task-card {
+    flex-direction: column;
+    overflow: hidden;
+    height: 100%;
+  }
+
+  /* .kanban-desktop {
+    overflow-y: scroll;
+  } Verificar, não remover*/
+
+  .kanban-desktop h3 {
+    display: none;
+  }
+}

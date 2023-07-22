@@ -1,0 +1,35 @@
+.header {
+  width: 100%;
+  height: 5rem;
+}
+
+.private-header {
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+
+.title-task {
+  flex-grow: 1;
+  text-align: center;
+
+  color: var(--black);
+  font-weight: 500;
+}
+
+.icon-task {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.container-planner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.calendar {
+  margin-bottom: 2rem;
+}

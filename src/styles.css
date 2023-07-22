@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap');
+
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+html {
+  font-size: 16px;
+}
+
+:root {
+  --dark-blue: #1A55b4;
+  --blue: #6aa5ff;
+  --light-blue: #ebf4fd;
+  --salmon: #fe746f;
+  --yellow: #fe6857;
+  --white: #fff;
+  --black: #000;
+  --gray: #a9a9a9;
+}
