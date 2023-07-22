@@ -1,3 +1,5 @@
+import { NgDompurifySanitizer } from "@tinkoff/ng-dompurify";
+import { TuiRootModule, TuiDialogModule, TuiAlertModule, TUI_SANITIZER, TuiCalendarModule } from "@taiga-ui/core";
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -41,8 +43,12 @@ import { TaskActionButtonComponent } from './components/task-action-button/task-
       provide: DateAdapter,
       useFactory: adapterFactory,
     }),
+    TuiRootModule,
+    TuiDialogModule,
+    TuiAlertModule,
+    TuiCalendarModule
   ],
-  providers: [],
+  providers: [{ provide: TUI_SANITIZER, useClass: NgDompurifySanitizer }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

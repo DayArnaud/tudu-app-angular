@@ -5,19 +5,15 @@
 
 <div class="container-planner">
   <div class="calendar">
-    <mwl-calendar-month-view class="calendar" [viewDate]=" viewDate" [locale]="locale">
-    </mwl-calendar-month-view>
+    <tui-calendar></tui-calendar>
   </div>
   <div class="tasks-list">
-    <h1>Lista de tarefas do dia</h1>
-    <h1>Lista</h1>
+    <app-task-field></app-task-field>
+    <app-task-field></app-task-field>
+    <app-task-field></app-task-field>
   </div>
 </div>
 
 <app-private-footer>
 
 </app-private-footer>
-
-
-
-<!-- style="height:400px; display:block" -->
