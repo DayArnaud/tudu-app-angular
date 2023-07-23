@@ -1,43 +1,35 @@
 <header class='header private-header'>
-  <h2 class='title-task'>Criar tarefa</h2>
+    <h2 class='title-task'>Criar tarefa</h2>
 </header>
 
 <div class='container-new-task'>
-  <div class='main-bar'></div>
-  <div class='set-task'>
-    <span class='new-task-title'>Digite o título</span>
-    <p>Adicione uma descrição (opcional)</p>
+    <div class='main-bar'></div>
+    <div class='set-task'>
+        <span class='new-task-title'>Digite o título</span>
+        <p>Adicione uma descrição (opcional)</p>
 
-    <app-task-action-button iconSrc='../../../assets/gray-calendar.svg' iconAlt='Ícone de calendário'
-      buttonText='Inserir prazo'>
-    </app-task-action-button>
-
-    <app-task-action-button iconSrc='../../../assets/tag.svg' iconAlt='Ícone de etiqueta'
-      buttonText='Inserir categoria'>
-    </app-task-action-button>
-
-    <app-task-action-button iconSrc='../../../assets/add-user.svg' iconAlt='Ícone de adicionar usuário'
-      buttonText='Adicionar membros'>
-    </app-task-action-button>
-
-    <app-task-action-button iconSrc='../../../assets/paperclip.svg' iconAlt='Ícone de clips'
-      buttonText='Inserir anexos'>
-    </app-task-action-button>
-
-    <div class='line'></div>
-
-    <ul class='new-subtask'>
-      <li class='subtask'>
-        <app-task-action-button iconSrc='../../../assets/square.svg' iconAlt='Ícone de checkbox'
-          buttonText='Subtarefa-exemplo'>
+        <app-task-action-button iconSrc='../../../assets/gray-calendar.svg' iconAlt='Ícone de calendário'
+            buttonText='Inserir prazo'>
         </app-task-action-button>
-      </li>
-    </ul>
 
-    <app-task-action-button iconSrc='../../../assets/arrow-right.svg' iconAlt='Ícone de adicionar subtarefa'
-      buttonText='Adicionar subtarefa'>
-    </app-task-action-button>
-  </div>
+        <app-task-action-button iconSrc='../../../assets/tag.svg' iconAlt='Ícone de etiqueta'
+            buttonText='Inserir categoria'>
+        </app-task-action-button>
+
+        <div class='line'></div>
+
+        <ul class='new-subtask'>
+            <li class='subtask'>
+                <app-task-action-button iconSrc='../../../assets/square.svg' iconAlt='Ícone de checkbox'
+                    buttonText='Subtarefa-exemplo'>
+                </app-task-action-button>
+            </li>
+        </ul>
+
+        <app-task-action-button iconSrc='../../../assets/arrow-right.svg' iconAlt='Ícone de adicionar subtarefa'
+            buttonText='Adicionar subtarefa'>
+        </app-task-action-button>
+    </div>
 </div>
 
 <button class='btn-task' type='submit'>Criar</button>

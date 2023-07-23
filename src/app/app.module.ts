@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { HttpClientModule } from '@angular/common/http';
 
 import { PrivateFooterComponent } from './components/private-footer/private-footer.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
@@ -21,34 +22,35 @@ import { TaskProgressCardComponent } from './components/task-progress-card/task-
 import { TaskActionButtonComponent } from './components/task-action-button/task-action-button.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    PrivateFooterComponent,
-    WelcomeComponent,
-    SignInComponent,
-    SignUpComponent,
-    MainPageComponent,
-    CreateTaskComponent,
-    ViewTaskComponent,
-    PlannerComponent,
-    TaskFieldComponent,
-    TaskProgressCardComponent,
-    TaskActionButtonComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    CalendarModule.forRoot({
-      provide: DateAdapter,
-      useFactory: adapterFactory,
-    }),
-    TuiRootModule,
-    TuiDialogModule,
-    TuiAlertModule,
-    TuiCalendarModule
-  ],
-  providers: [{ provide: TUI_SANITIZER, useClass: NgDompurifySanitizer }],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        PrivateFooterComponent,
+        WelcomeComponent,
+        SignInComponent,
+        SignUpComponent,
+        MainPageComponent,
+        CreateTaskComponent,
+        ViewTaskComponent,
+        PlannerComponent,
+        TaskFieldComponent,
+        TaskProgressCardComponent,
+        TaskActionButtonComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        CalendarModule.forRoot({
+            provide: DateAdapter,
+            useFactory: adapterFactory,
+        }),
+        TuiRootModule,
+        TuiDialogModule,
+        TuiAlertModule,
+        TuiCalendarModule,
+        HttpClientModule
+    ],
+    providers: [{ provide: TUI_SANITIZER, useClass: NgDompurifySanitizer }],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

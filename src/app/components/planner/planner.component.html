@@ -1,17 +1,17 @@
 <header class='header private-header'>
-  <h2 class='title-task'>Planner</h2>
-  <img class='icon-task' src='../../../assets/lupa.svg' alt='Ícone de busca'>
+    <h2 class='title-task'>Planner</h2>
+    <img class='icon-task' src='../../../assets/lupa.svg' alt='Ícone de busca'>
 </header>
 
 <div class="container-planner">
-  <div class="calendar">
-    <tui-calendar></tui-calendar>
-  </div>
-  <div class="tasks-list">
-    <app-task-field></app-task-field>
-    <app-task-field></app-task-field>
-    <app-task-field></app-task-field>
-  </div>
+    <div class="calendar">
+        <tui-calendar></tui-calendar>
+    </div>
+    <div class="tasks-list">
+        <app-task-field [showCheckbox]="false" [showDate]="true"></app-task-field>
+        <app-task-field [showCheckbox]="false" [showDate]="true"></app-task-field><app-task-field [showCheckbox]="false"
+            [showDate]="true"></app-task-field>
+    </div>
 </div>
 
 <app-private-footer>
