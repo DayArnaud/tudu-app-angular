@@ -1,18 +1,19 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
-interface Iuser {
+export interface Iuser {
     name: string,
     email: string,
     password: string
 }
 
-interface Ilogin {
+export interface Ilogin {
     email: string,
     password: string
 }
 
-interface Itask {
+export interface Itask {
     user_id: string,
     title: string,
     description: string,
@@ -21,13 +22,13 @@ interface Itask {
     category: number
 }
 
-interface IupdateSubtask {
+export interface IupdateSubtask {
     task_id: string,
     subtask_id: string,
     check: boolean
 }
 
-interface Icomment {
+export interface Icomment {
     name: string,
     content: string,
     user_id: string
@@ -39,7 +40,7 @@ interface Icomment {
 
 export class TuduService {
 
-    private apiURL = 'https://localhost:3000'
+    private apiURL = 'http://localhost:3000'
 
     constructor(private http: HttpClient) { }
 
@@ -47,8 +48,8 @@ export class TuduService {
         return this.http.post(`${this.apiURL}/users`, { user });
     }
 
-    userLogin(login: Ilogin) {
-        return this.http.post(`${this.apiURL}/auth/sign_in`, { user: login })
+    userLogin(login: Ilogin): Observable<any> {
+        return this.http.post(`${this.apiURL}/sign_in`, { sign_in: login });
     }
 
     listAllTasks(user_id: string) {

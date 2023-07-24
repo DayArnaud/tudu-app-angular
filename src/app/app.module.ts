@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from "@angular/forms";
 
 import { PrivateFooterComponent } from './components/private-footer/private-footer.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
@@ -48,7 +49,8 @@ import { TaskActionButtonComponent } from './components/task-action-button/task-
         TuiDialogModule,
         TuiAlertModule,
         TuiCalendarModule,
-        HttpClientModule
+        HttpClientModule,
+        ReactiveFormsModule
     ],
     providers: [{ provide: TUI_SANITIZER, useClass: NgDompurifySanitizer }],
     bootstrap: [AppComponent]

@@ -2,41 +2,38 @@
 </header>
 
 <section class='container-sign-up'>
-  <div class='sign-up-bar'></div>
+    <div class='sign-up-bar'></div>
 
-  <div class='container-form'>
-    <h1>Cadastrar</h1>
-    <div class='input'>
-      <label for='name'>Nome</label>
-      <input type='text' name='name' />
-    </div>
-    <div class='input'>
-      <label for='email'>E-mail</label>
-      <input type='email' name='email' />
-    </div>
-    <div class='input'>
-      <label for='password'>Senha</label>
-      <input type='password' name='password' />
-      <img class='closed-eye' src='../../../assets/closed-eye.svg' alt='Clique para visualizar senha'>
-    </div>
-    <div class='input'>
-      <label for='confirm-password'>Repetir senha</label>
-      <input type='password' name='confirm-password' />
-      <img class='closed-eye' src='../../../assets/opened-eye.svg' alt='Clique para visualizar senha'>
-    </div>
-    <button class='btn-submit' type='submit'>Cadastrar</button>
-    <br>
-    <button class='btn-google' type='button'>
-      <img class='google' src='../../../assets/google.png' alt='Ícone do Google'>
-      Cadastrar com o Google
-    </button>
-    <a class='account' routerLink='/sign-up'>Já tenho conta</a>
-  </div>
+    <div class='container-form'>
+        <h1>Cadastrar</h1>
 
+        <form [formGroup]="userForm" (ngSubmit)="submit()">
+            <div class='input'>
+                <label for='name'>Nome</label>
+                <input id='name' type='text' formControlName="name" />
+            </div>
+            <div class='input'>
+                <label for='email'>E-mail</label>
+                <input id='email' type='email' formControlName="email" />
+            </div>
+            <div class='input'>
+                <label for='password'>Senha</label>
+                <input id='password' type='password' formControlName="password" />
+                <img class='closed-eye' src='../../../assets/closed-eye.svg' alt='Clique para visualizar senha'>
+            </div>
+            <div class='input'>
+                <label for='confirm-password'>Repetir senha</label>
+                <input id='confirm-password' type='password' formControlName="confirmPassword" />
+                <img class='closed-eye' src='../../../assets/opened-eye.svg' alt='Clique para visualizar senha'>
+            </div>
+            <button class='btn-submit' type='submit'>Cadastrar</button>
+        </form>
+
+    </div>
 </section>
 
 <footer class='public-footer'>
-  <div class='footer-div'>
-    <div class='bar'></div>
-  </div>
+    <div class='footer-div'>
+        <div class='bar'></div>
+    </div>
 </footer>

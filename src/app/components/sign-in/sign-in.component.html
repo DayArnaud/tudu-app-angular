@@ -2,9 +2,34 @@
 </header>
 
 <section class='container-sign-in'>
-  <div class='sign-in-bar'></div>
+    <div class='sign-in-bar'></div>
 
-  <div class='container-form'>
+    <div class='container-form'>
+        <h1>Entrar</h1>
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <div class='input'>
+                <label for='email'>E-mail</label>
+                <input id='email' type='email' formControlName='email' />
+            </div>
+            <div class='input'>
+                <label for='password'>Senha</label>
+                <input id='password' type='password' formControlName='password' />
+                <img class='closed-eye' src='../../../assets/closed-eye.svg' alt='Clique para visualizar senha'>
+            </div>
+            <button class='btn-submit' type='submit'>Entrar</button>
+            <br>
+            <button class='btn-google' type='button'>
+                <img class='google' src='../../../assets/google.png' alt="Ícone do Google">
+                Entrar com o Google
+            </button>
+            <a class='account' routerLink='/sign-up'>Não tenho conta</a>
+        </form>
+
+    </div>
+</section>
+
+
+<!-- <div class='container-form'>
     <h1>Entrar</h1>
     <div class='input'>
       <label for='email'>E-mail</label>
@@ -21,13 +46,11 @@
       <img class='google' src='../../../assets/google.png' alt="Ícone do Google">
       Entrar com o Google
     </button>
-    <a class='account' routerLink='/sign-up'>Não tenho conta</a>
-  </div>
-
-</section>
+    <a class='account' routerLink='/sign-up'>Não tenho conta</a> -->
+<!-- </div> -->
 
 <footer class='public-footer'>
-  <div class='footer-div'>
-    <div class='bar'></div>
-  </div>
+    <div class='footer-div'>
+        <div class='bar'></div>
+    </div>
 </footer>
