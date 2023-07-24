@@ -8,23 +8,13 @@
 
         <div class="kanban-desktop">
             <h2 class='titles-list'>A FAZER</h2>
-            <app-task-field></app-task-field>
-            <app-task-field></app-task-field>
-            <app-task-field></app-task-field>
+            <app-task-field *ngFor="let task of tasksTodo" [task]="task"
+                (checkboxClick)="onCheckboxClick($event)"></app-task-field>
         </div>
-
-        <!-- <div class="kanban-desktop">
-            <h2 class='titles-list'>EM PROGRESSO</h2>
-            <div class='container-task-card'>
-                <app-task-progress-card></app-task-progress-card>
-                <app-task-progress-card></app-task-progress-card>
-                <app-task-progress-card></app-task-progress-card>
-            </div>
-        </div> -->
 
         <div class="kanban-desktop">
             <h2 class='titles-list'>CONCLUÍDO</h2>
-            <app-task-field></app-task-field>
+            <app-task-field *ngFor="let task of tasksDone" [task]="task" />
         </div>
 
     </div>

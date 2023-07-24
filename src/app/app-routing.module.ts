@@ -10,17 +10,17 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: 'welcome', component: WelcomeComponent },
-  { path: 'sign-in', component: SignInComponent },
-  { path: 'sign-up', component: SignUpComponent },
-  { path: 'main-page', component: MainPageComponent },
-  { path: 'create-task', component: CreateTaskComponent },
-  { path: 'view-task', component: ViewTaskComponent },
-  { path: 'planner', component: PlannerComponent },
+    { path: 'welcome', component: WelcomeComponent },
+    { path: 'sign-in', component: SignInComponent },
+    { path: 'sign-up', component: SignUpComponent },
+    { path: 'main-page', component: MainPageComponent },
+    { path: 'create-task', component: CreateTaskComponent },
+    { path: 'view-task', component: ViewTaskComponent },
+    { path: 'planner', component: PlannerComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
     selector: 'app-task-field',
@@ -8,4 +8,10 @@ import { Component, Input } from '@angular/core';
 export class TaskFieldComponent {
     @Input() showCheckbox: boolean = true;
     @Input() showDate: boolean = false;
+    @Input() task: any;
+    @Output() checkboxClick = new EventEmitter<any>();
+
+    onCheckboxClick() {
+        this.checkboxClick.emit(this.task);
+    }
 }

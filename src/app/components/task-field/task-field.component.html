@@ -1,11 +1,11 @@
 <div class="task">
     <label class="custom-checkbox">
-        <input type="checkbox" *ngIf="showCheckbox" />
+        <input type="checkbox" (click)="onCheckboxClick()" />
         <span class="checkbox" *ngIf="showCheckbox"></span>
         <p class="date-style" *ngIf="showDate">Seg, 24</p>
         <div class="clickable-task">
-            <h3>Título da tarefa dinâmico</h3>
-            <p class="task-detail">Descrição dinâmica</p>
+            <h3>{{task.title}}</h3>
+            <p class="task-detail">{{task.description}}</p>
         </div>
     </label>
 </div>

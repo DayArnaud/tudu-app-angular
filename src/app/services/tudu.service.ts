@@ -53,11 +53,15 @@ export class TuduService {
     }
 
     listAllTasks(user_id: string) {
-        return this.http.get(`${this.apiURL}/user_tasks/${user_id}`)
+        return this.http.get(`${this.apiURL}/user_tasks/${user_id}`);
     }
 
     listByTask(task_id: string) {
-        return this.http.get(`${this.apiURL}/tasks/${task_id}`)
+        return this.http.get(`${this.apiURL}/tasks/${task_id}`);
+    }
+
+    listByTaskAndStatus(task_id: string, status: number) {
+        return this.http.get(`${this.apiURL}/user_tasks/${task_id}?status=${status}`);
     }
 
     createTask(task: Itask) {
@@ -69,7 +73,7 @@ export class TuduService {
             task: {
                 status
             }
-        })
+        });
     }
 
     createSubtask(task_id: string, description: string) {
@@ -77,7 +81,7 @@ export class TuduService {
             task: {
                 description
             }
-        })
+        });
     }
 
     updateSubtask({ task_id, subtask_id, check }: IupdateSubtask) {
@@ -85,7 +89,7 @@ export class TuduService {
             subtask: {
                 check
             }
-        })
+        });
     }
 
     createComment(comment: Icomment, task_id: string) {
