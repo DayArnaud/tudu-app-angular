@@ -10,6 +10,9 @@ import { Ilogin, TuduService } from 'src/app/services/tudu.service';
 })
 export class SignInComponent implements OnInit {
     loginForm!: FormGroup;
+    public showPassword = ['password', 'text'];
+    public indexPassword = 0;
+    public passwordImg = ['../../../assets/closed-eye.svg', '../../../assets/opened-eye.svg'];
 
     constructor(private tuduService: TuduService, private router: Router) { }
 
@@ -36,5 +39,12 @@ export class SignInComponent implements OnInit {
             localStorage.setItem('name', response.name);
             this.router.navigateByUrl('/main-page');
         });
+    }
+
+    openPassword() {
+        if (this.indexPassword === 0) {
+            return this.indexPassword = 1;
+        }
+        return this.indexPassword = 0;
     }
 }

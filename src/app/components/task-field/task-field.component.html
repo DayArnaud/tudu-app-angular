@@ -1,8 +1,9 @@
-<div class="task" [style.background-color]="getCategoryColor(task.category)" [attr.data-category]="task.category">
+<div class="task" [style.background-color]="getCategoryColor(task.category)" [attr.data-category]="task.category"
+    [attr.data-status]="task.status" [style.background-color]="getStatus(task.status)">
     <label class="custom-checkbox">
         <input type="checkbox" (click)="onCheckboxClick()" [checked]="task.status === 2" />
         <span class="checkbox" *ngIf="showCheckbox"></span>
-        <a [routerLink]="['/view-task', task['_id']['$oid']]">
+        <a class="task-link" [routerLink]="['/view-task', task['_id']['$oid']]">
             <p class="date-style" *ngIf="showDate">Seg, 24</p>
             <div class="clickable-task">
                 <h3>{{task.title}}</h3>

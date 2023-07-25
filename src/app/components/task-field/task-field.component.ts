@@ -11,6 +11,7 @@ export class TaskFieldComponent {
     @Input() task: any;
     @Output() checkboxClick = new EventEmitter<any>();
 
+
     onCheckboxClick() {
         this.checkboxClick.emit(this.task);
     }
@@ -26,5 +27,11 @@ export class TaskFieldComponent {
             default:
                 return 'var(--dark-blue)';
         }
+    }
+    getStatus(status: number) {
+        if (status === 2) {
+            return 'var(--gray)';
+        }
+        return;
     }
 }

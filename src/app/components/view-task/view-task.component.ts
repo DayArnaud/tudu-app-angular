@@ -133,4 +133,7 @@ export class ViewTaskComponent implements OnInit {
         }
     }
 
+    goTo() {
+        this.router.navigate(['/main-page']);
+    }
 }

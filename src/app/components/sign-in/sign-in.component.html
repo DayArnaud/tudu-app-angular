@@ -6,25 +6,20 @@
 
     <div class='container-form'>
         <h1>Entrar</h1>
-        <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <form class="form" [formGroup]="loginForm" (ngSubmit)="login()">
             <div class='input'>
                 <label for='email'>E-mail</label>
                 <input id='email' type='email' formControlName='email' />
             </div>
             <div class='input'>
                 <label for='password'>Senha</label>
-                <input id='password' type='password' formControlName='password' />
-                <img class='closed-eye' src='../../../assets/closed-eye.svg' alt='Clique para visualizar senha'>
+                <input id='password' [type]="showPassword[indexPassword]" formControlName='password' />
+                <img class='closed-eye' [src]="passwordImg[indexPassword]" alt='Clique para visualizar senha'
+                    (click)="openPassword()">
             </div>
             <button class='btn-submit' type='submit'>Entrar</button>
-            <br>
-            <button class='btn-google' type='button'>
-                <img class='google' src='../../../assets/google.png' alt="Ícone do Google">
-                Entrar com o Google
-            </button>
-            <a class='account' routerLink='/sign-up'>Não tenho conta</a>
         </form>
-
+        <a class='account' routerLink='/sign-up'>Não tenho conta</a>
     </div>
 </section>
 

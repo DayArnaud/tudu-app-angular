@@ -6,13 +6,12 @@
 .private-header {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    justify-content: center;
 }
 
 .title-task {
     color: var(--black);
     font-weight: 500;
-    margin-left: 9rem;
 }
 
 .container-new-task {
@@ -47,26 +46,29 @@
 .new-task-title {
     color: var(--dark-blue);
     font-size: 1.5rem;
+    background-color: transparent;
+    border: none;
 }
 
-.footer-bar {
-    position: absolute;
-    bottom: 5%;
+.new-task-title::placeholder {
+    color: var(--dark-blue);
+}
+
+.new-task-paragraph {
+    color: var(--dark-blue);
+    font-size: 1rem;
+    background-color: transparent;
+    border: none;
+}
+
+.new-task-paragraph::placeholder {
+    color: var(--dark-gray);
 }
 
 .line {
-    width: 70%;
+    width: 90%;
     height: 2px;
     background-color: rgba(204, 204, 204, 0.5);
-}
-
-.new-subtask {
-    list-style: none;
-}
-
-.subtask {
-    display: flex;
-    gap: 1rem;
 }
 
 .btn-task {
@@ -97,6 +99,7 @@
     background: none;
     color: var(--black);
     font-size: 1rem;
+    width: 60%;
 }
 
 .mat-select::placeholder {
@@ -132,7 +135,6 @@
     font-size: 1rem;
 }
 
-
 .date-picker-container {
     display: flex;
     flex-direction: row-reverse;
@@ -146,11 +148,11 @@
 
 .calendar-toggle {
     display: flex;
-    margin-right: 1rem;
+    margin-left: -1rem;
 }
 
 .input-calendar::placeholder {
-    color: var(--black);
+    color: var(--dark-gray);
     font-size: 1rem;
 }
 

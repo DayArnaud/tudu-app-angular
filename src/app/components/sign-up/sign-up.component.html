@@ -7,7 +7,7 @@
     <div class='container-form'>
         <h1>Cadastrar</h1>
 
-        <form [formGroup]="userForm" (ngSubmit)="submit()">
+        <form class="form" [formGroup]="userForm" (ngSubmit)="submit()">
             <div class='input'>
                 <label for='name'>Nome</label>
                 <input id='name' type='text' formControlName="name" />
@@ -18,17 +18,19 @@
             </div>
             <div class='input'>
                 <label for='password'>Senha</label>
-                <input id='password' type='password' formControlName="password" />
-                <img class='closed-eye' src='../../../assets/closed-eye.svg' alt='Clique para visualizar senha'>
+                <input id='password' [type]="showPassword[indexPassword]" formControlName="password" />
+                <img class='closed-eye' [src]="passwordImg[indexPassword]" alt='Clique para visualizar senha'
+                    (click)="openPassword()">
             </div>
             <div class='input'>
                 <label for='confirm-password'>Repetir senha</label>
-                <input id='confirm-password' type='password' formControlName="confirmPassword" />
-                <img class='closed-eye' src='../../../assets/opened-eye.svg' alt='Clique para visualizar senha'>
+                <input id='confirm-password' [type]="showPassword[iPassword]" formControlName="confirmPassword" />
+                <img class='closed-eye' [src]="passwordImg[iPassword]" alt='Clique para visualizar senha'
+                    (click)="closePassword()">
             </div>
             <button class='btn-submit' type='submit'>Cadastrar</button>
         </form>
-
+        <a class='account' routerLink='/sign-in'>Já tenho conta</a>
     </div>
 </section>
 

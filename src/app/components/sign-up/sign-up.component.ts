@@ -10,6 +10,10 @@ import { Router } from '@angular/router';
 })
 export class SignUpComponent implements OnInit {
     userForm!: FormGroup;
+    public showPassword = ['password', 'text'];
+    public passwordImg = ['../../../assets/closed-eye.svg', '../../../assets/opened-eye.svg'];
+    public indexPassword = 0;
+    public iPassword = 1;
 
     constructor(private tuduService: TuduService, private router: Router) { }
 
@@ -44,6 +48,18 @@ export class SignUpComponent implements OnInit {
         this.tuduService.createUser(user).subscribe(() => {
             this.router.navigateByUrl('/sign-in');
         });
+    }
+    openPassword() {
+        if (this.indexPassword === 0) {
+            return this.indexPassword = 1;
+        }
+        return this.indexPassword = 0;
+    }
+    closePassword() {
+        if (this.iPassword === 1) {
+            return this.iPassword = 0;
+        }
+        return this.iPassword = 1;
     }
 
 }
