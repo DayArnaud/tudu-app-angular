@@ -12,20 +12,26 @@ export class MainPageComponent implements OnInit {
 
     constructor(private tuduService: TuduService) { }
 
-    ngOnInit(): void {
+    loadTasks() {
         const userId = localStorage.getItem('user_id') ?? ''
         this.tuduService.listByTaskAndStatus(userId, 1).subscribe(tasks => {
             this.tasksTodo = tasks;
-            console.log(this.tasksTodo);
         });
 
         this.tuduService.listByTaskAndStatus(userId, 2).subscribe(tasks => {
             this.tasksDone = tasks;
-            console.log(this.tasksDone);
         });
     }
 
-    onCheckboxClick(e: any) {
+    ngOnInit(): void {
+        this.loadTasks();
+    }
 
+
+
+    onCheckBoxClick(task_id: string, status: number) {
+        this.tuduService.updateTask(task_id, status).subscribe(() => {
+            this.loadTasks();
+        });
     }
 }

@@ -9,12 +9,15 @@
         <div class="kanban-desktop">
             <h2 class='titles-list'>A FAZER</h2>
             <app-task-field *ngFor="let task of tasksTodo" [task]="task"
-                (checkboxClick)="onCheckboxClick($event)"></app-task-field>
+                (checkboxClick)="onCheckBoxClick(task['_id']['$oid'], 2)">
+            </app-task-field>
         </div>
 
         <div class="kanban-desktop">
             <h2 class='titles-list'>CONCLUÍDO</h2>
-            <app-task-field *ngFor="let task of tasksDone" [task]="task" />
+            <app-task-field *ngFor="let task of tasksDone" [task]="task"
+                (checkboxClick)="onCheckBoxClick(task['_id']['$oid'],1)">
+            </app-task-field>
         </div>
 
     </div>

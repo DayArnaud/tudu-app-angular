@@ -1,11 +1,13 @@
-<div class="task">
+<div class="task" [style.background-color]="getCategoryColor(task.category)" [attr.data-category]="task.category">
     <label class="custom-checkbox">
-        <input type="checkbox" (click)="onCheckboxClick()" />
+        <input type="checkbox" (click)="onCheckboxClick()" [checked]="task.status === 2" />
         <span class="checkbox" *ngIf="showCheckbox"></span>
-        <p class="date-style" *ngIf="showDate">Seg, 24</p>
-        <div class="clickable-task">
-            <h3>{{task.title}}</h3>
-            <p class="task-detail">{{task.description}}</p>
-        </div>
+        <a class="" [routerLink]="['/view-task', task['_id']['$oid']]">
+            <p class="date-style" *ngIf="showDate">Seg, 24</p>
+            <div class="clickable-task">
+                <h3>{{task.title}}</h3>
+                <p class="task-detail">{{task.description}}</p>
+            </div>
+        </a>
     </label>
 </div>

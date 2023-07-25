@@ -8,6 +8,33 @@ export interface Iuser {
     password: string
 }
 
+interface ISubtask {
+    _id: {
+        $oid: string;
+    };
+    created_at: string;
+    description: string;
+    updated_at: string;
+}
+
+interface ITaskDetail {
+    _id: {
+        $oid: string;
+    };
+    category: number;
+    created_at: string;
+    description: string;
+    expire_date: string;
+    status: number;
+    subtask?: ISubtask[];
+    title: string;
+    updated_at: string;
+    user_id: {
+        $oid: string;
+    };
+}
+
+
 export interface Ilogin {
     email: string,
     password: string
@@ -56,8 +83,8 @@ export class TuduService {
         return this.http.get(`${this.apiURL}/user_tasks/${user_id}`);
     }
 
-    listByTask(task_id: string) {
-        return this.http.get(`${this.apiURL}/tasks/${task_id}`);
+    listTaskById(taskId: string): Observable<ITaskDetail> {
+        return this.http.get<ITaskDetail>(`${this.apiURL}/tasks/${taskId}`);
     }
 
     listByTaskAndStatus(task_id: string, status: number) {

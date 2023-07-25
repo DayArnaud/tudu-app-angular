@@ -8,9 +8,8 @@
         <tui-calendar></tui-calendar>
     </div>
     <div class="tasks-list">
-        <app-task-field [showCheckbox]="false" [showDate]="true"></app-task-field>
-        <app-task-field [showCheckbox]="false" [showDate]="true"></app-task-field><app-task-field [showCheckbox]="false"
-            [showDate]="true"></app-task-field>
+        <app-task-field *ngFor="let task of taskTodo" [task]="task" [showCheckbox]="false" [showDate]="true">
+        </app-task-field>
     </div>
 </div>
 

@@ -14,4 +14,17 @@ export class TaskFieldComponent {
     onCheckboxClick() {
         this.checkboxClick.emit(this.task);
     }
+
+    getCategoryColor(category: number) {
+        switch (category) {
+            case 1:
+                return 'var(--salmon)';
+            case 2:
+                return 'var(--yellow)';
+            case 3:
+                return 'var(--blue)';
+            default:
+                return 'var(--dark-blue)';
+        }
+    }
 }

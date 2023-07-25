@@ -30,6 +30,18 @@
     color: var(--dark-blue);
 }
 
+.task[data-category="1"] p.task-detail {
+    color: var(--dark-salmon);
+}
+
+.task[data-category="2"] p.task-detail {
+    color: var(--dark-yellow);
+}
+
+.task[data-category="3"] p.task-detail {
+    color: var(--dark-blue);
+}
+
 .custom-checkbox input[type="checkbox"] {
     display: none;
 }

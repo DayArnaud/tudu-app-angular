@@ -10,12 +10,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
+    { path: '', component: WelcomeComponent },
     { path: 'welcome', component: WelcomeComponent },
     { path: 'sign-in', component: SignInComponent },
     { path: 'sign-up', component: SignUpComponent },
     { path: 'main-page', component: MainPageComponent },
     { path: 'create-task', component: CreateTaskComponent },
-    { path: 'view-task', component: ViewTaskComponent },
+    { path: 'view-task/:task_id', component: ViewTaskComponent },
     { path: 'planner', component: PlannerComponent },
 ];
 

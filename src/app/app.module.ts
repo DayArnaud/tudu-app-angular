@@ -1,6 +1,6 @@
 import { NgDompurifySanitizer } from "@tinkoff/ng-dompurify";
 import { TuiRootModule, TuiDialogModule, TuiAlertModule, TUI_SANITIZER, TuiCalendarModule } from "@taiga-ui/core";
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +9,16 @@ import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from "@angular/forms";
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatSelectModule } from "@angular/material/select";
+import { MatChipsModule } from '@angular/material/chips';
+import { TuiInputModule } from "@taiga-ui/kit";
+import { FormsModule } from "@angular/forms";
+import { registerLocaleData } from '@angular/common';
+import pt from '@angular/common/locales/pt';
 
 import { PrivateFooterComponent } from './components/private-footer/private-footer.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
@@ -19,8 +29,10 @@ import { CreateTaskComponent } from './components/create-task/create-task.compon
 import { ViewTaskComponent } from './components/view-task/view-task.component';
 import { PlannerComponent } from './components/planner/planner.component';
 import { TaskFieldComponent } from './components/task-field/task-field.component';
-import { TaskProgressCardComponent } from './components/task-progress-card/task-progress-card.component';
-import { TaskActionButtonComponent } from './components/task-action-button/task-action-button.component';
+import { SubtaskActionComponent } from './components/subtask-action/subtask-action.component';
+
+registerLocaleData(pt);
+
 
 @NgModule({
     declarations: [
@@ -34,8 +46,7 @@ import { TaskActionButtonComponent } from './components/task-action-button/task-
         ViewTaskComponent,
         PlannerComponent,
         TaskFieldComponent,
-        TaskProgressCardComponent,
-        TaskActionButtonComponent
+        SubtaskActionComponent
     ],
     imports: [
         BrowserModule,
@@ -50,9 +61,20 @@ import { TaskActionButtonComponent } from './components/task-action-button/task-
         TuiAlertModule,
         TuiCalendarModule,
         HttpClientModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        FormsModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        MatSelectModule,
+        MatChipsModule,
+        TuiInputModule
     ],
-    providers: [{ provide: TUI_SANITIZER, useClass: NgDompurifySanitizer }],
+    providers: [
+        { provide: TUI_SANITIZER, useClass: NgDompurifySanitizer },
+        { provide: LOCALE_ID, useValue: 'pt' }
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

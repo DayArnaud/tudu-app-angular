@@ -1,38 +1,57 @@
-<header class='header private-header'>
-    <h2 class='title-task'>Criar tarefa</h2>
-</header>
+<form [formGroup]="taskForm" (ngSubmit)="registerTask()">
+    <header class='header private-header'>
+        <h2 class='title-task'>Criar tarefa</h2>
+    </header>
 
-<div class='container-new-task'>
-    <div class='main-bar'></div>
-    <div class='set-task'>
-        <span class='new-task-title'>Digite o título</span>
-        <p>Adicione uma descrição (opcional)</p>
+    <div class='container-new-task'>
+        <div class='main-bar'></div>
+        <div class='set-task'>
+            <input class='new-task-title' id="title" placeholder="Digite o título" value="0" formControlName='title'>
+            <input class='new-task-paragraph' id="task_description" placeholder="Adicione uma descrição"
+                formControlName='task_description' value="0">
 
-        <app-task-action-button iconSrc='../../../assets/gray-calendar.svg' iconAlt='Ícone de calendário'
-            buttonText='Inserir prazo'>
-        </app-task-action-button>
+            <div class="date-picker-container">
+                <input id="expire_date" class="input-calendar" placeholder="Inserir prazo" matInput
+                    formControlName='expire_date' [matDatepicker]="picker">
+                <mat-hint></mat-hint>
+                <mat-datepicker-toggle class="calendar-toggle" matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </div>
 
-        <app-task-action-button iconSrc='../../../assets/tag.svg' iconAlt='Ícone de etiqueta'
-            buttonText='Inserir categoria'>
-        </app-task-action-button>
+            <div class="container-category">
+                <img class="icon-task" src="../../../assets/tag.svg" alt="">
+                <mat-select id="category" class="mat-select" placeholder="Insira uma categoria" mat-chip-list
+                    formControlName='category'>
+                    <mat-option class="mat-chip" mat-option value="1">
+                        Trabalho
+                    </mat-option>
+                    <mat-option class="mat-chip" value="2">
+                        Pessoal
+                    </mat-option>
+                    <mat-option class="mat-chip" value="3">
+                        Estudos
+                    </mat-option>
+                </mat-select>
+            </div>
 
-        <div class='line'></div>
+            <div class='line'></div>
 
-        <ul class='new-subtask'>
-            <li class='subtask'>
-                <app-task-action-button iconSrc='../../../assets/square.svg' iconAlt='Ícone de checkbox'
-                    buttonText='Subtarefa-exemplo'>
-                </app-task-action-button>
-            </li>
-        </ul>
+            <ul>
+                <app-subtask-action *ngFor="let subtask of nonRegisteredSubtasks" [subtask]="subtask">
+                </app-subtask-action>
+            </ul>
 
-        <app-task-action-button iconSrc='../../../assets/arrow-right.svg' iconAlt='Ícone de adicionar subtarefa'
-            buttonText='Adicionar subtarefa'>
-        </app-task-action-button>
+            <form [formGroup]="inputSubTask" class="add-subtask" (ngSubmit)="onEnter()">
+                <img class="icon-task" src="../../../assets/arrow-right.svg" />
+                <input id="description" class="input-add-subtask" formControlName='description'
+                    placeholder="Adicionar Subtarefa" />
+                <button type="submit" style="display: none;"></button>
+            </form>
+        </div>
     </div>
-</div>
 
-<button class='btn-task' type='submit'>Criar</button>
+    <button class='btn-task' type='submit'>Criar</button>
+</form>
 
 <app-private-footer>
 

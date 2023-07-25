@@ -3,23 +3,27 @@
 @import "../node_modules/angular-calendar/css/angular-calendar.css";
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
 }
 
 html {
-  font-size: 16px;
+    font-size: 16px;
 }
 
 :root {
-  --dark-blue: #1A55b4;
-  --blue: #6aa5ff;
-  --light-blue: #ebf4fd;
-  --salmon: #fe746f;
-  --yellow: #fe6857;
-  --white: #fff;
-  --black: #000;
-  --gray: #a9a9a9;
+    --dark-blue: #1A55b4;
+    --blue: #6aa5ff;
+    --light-blue: #ebf4fd;
+    --salmon: #fe746f;
+    --dark-salmon: #a04749;
+    --yellow: #fec857;
+    --dark-yellow: #8e7136;
+    --white: #fff;
+    --black: #000;
+    --gray: #a9a9a9;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

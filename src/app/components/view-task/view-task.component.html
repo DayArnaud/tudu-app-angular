@@ -5,51 +5,56 @@
 
 <div class='view-task-container'>
     <div class='updated-tasks'>
-        <h1 class='view-task-title'>Desafio de design UX/UI</h1>
-        <span>Descrição descrição descrição descrição</span>
+        <h1 class='view-task-title'>{{taskDetail.title}}</h1>
+        <span>{{taskDetail.description}}</span>
 
-        <app-task-action-button iconSrc='../../../assets/gray-calendar.svg' iconAlt='Ícone de calendário'
-            buttonText='Data dinâmica'>
-        </app-task-action-button>
+        <div>
+            <img src="" alt="">
+            <p>
+                {{ taskDetail.expire_date | date:'d MMMM' }}
+            </p>
+        </div>
 
-        <app-task-action-button iconSrc='../../../assets/tag.svg' iconAlt='Ícone de etiqueta'
-            buttonText='Nome da categoria dinâmico'>
-        </app-task-action-button>
+        <div>
+            <img src="" alt="">
+            <p>
+                {{categorySelected[taskDetail.category-1]}}
+            </p>
+        </div>
 
         <div class='line'></div>
 
         <ul class='subtask'>
-            <li>
-                <app-task-action-button iconSrc='../../../assets/square.svg' iconAlt='Ícone de checkbox'
-                    buttonText='Wireframes'>
-                </app-task-action-button>
-            </li>
-            <li>
-                <app-task-action-button iconSrc='../../../assets/square.svg' iconAlt='Ícone de checkbox'
-                    buttonText='Apresentação'>
-                </app-task-action-button>
-            </li>
+            <app-subtask-action iconAlt='Ícone de checkbox' *ngFor="let subtask of taskDetail.subtask"
+                [subtask]="subtask">
+            </app-subtask-action>
         </ul>
 
-        <app-task-action-button iconSrc='../../../assets/arrow-right.svg' iconAlt='Ícone de adicionar subtarefa'
-            buttonText='Adicionar subtarefas'>
-        </app-task-action-button>
+        <form [formGroup]="formSubTask" class="add-subtask" (ngSubmit)="onRegisterSubTask()">
+            <img class="task-icon" src="../../../assets/arrow-right.svg" />
+            <input id="description" class="input-add-subtask" formControlName='description'
+                placeholder="Adicionar Subtarefa" />
+            <button type="submit" style="display: none;"></button>
+        </form>
+
 
         <div class='line'></div>
-        <label for="comment"></label>
-        <input class='input-comment' type="text" placeholder='Adicionar comentário' name="comment"
-            [value]="member.comment" />
+        <form [formGroup]="formComment" (ngSubmit)="registerComment(taskDetail['_id']['$oid'])">
+            <label for="comment"></label>
+            <input class='input-comment' type="text" placeholder='Adicionar comentário' name="comment"
+                formControlName='content' />
+        </form>
 
-        <div class='container-comment'>
+        <div class='container-comment' *ngFor="let comment of comments">
             <div>
                 <img class='avatar-img' [src]="member.profile" alt='Imagem do perfil'>
             </div>
             <div>
                 <div class='name-section'>
-                    <strong>{{ member.firstName }}</strong>
-                    <p>3 dias atrás</p>
+                    <strong>{{ comment.name }}</strong>
+                    <p>{{comment.created_at | date:'d MMMM' }}</p>
                 </div>
-                <p class='comment'>{{ member.comment }}</p>
+                <p class='comment'>{{ comment.content }}</p>
             </div>
         </div>
     </div>
