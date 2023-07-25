@@ -10,6 +10,7 @@ interface ISubtask {
     created_at: string;
     description: string;
     updated_at: string;
+    isCompleted: boolean
 }
 
 interface ITaskDetail {

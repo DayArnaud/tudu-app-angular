@@ -14,6 +14,7 @@ interface ISubtask {
     };
     created_at: string;
     description: string;
+    isCompleted: boolean;
     updated_at: string;
 }
 

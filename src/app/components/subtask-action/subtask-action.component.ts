@@ -1,7 +1,8 @@
 import { Component, Input } from '@angular/core';
 
 interface Isubtask {
-    description: string
+    description: string;
+    isCompleted: boolean;
 }
 
 @Component({

@@ -5,7 +5,8 @@ import { forkJoin } from 'rxjs';
 import { Router } from '@angular/router';
 
 interface IsubtaskRegistered {
-    description: string
+    description: string,
+    isCompleted: boolean
 }
 
 @Component({
@@ -37,7 +38,8 @@ export class CreateTaskComponent implements OnInit {
     onEnter() {
         if (this.inputSubTask.valid) {
             const subtaskRegistered: IsubtaskRegistered = {
-                description: this.inputSubTask.get('description')?.value
+                description: this.inputSubTask.get('description')?.value,
+                isCompleted: false
             }
             this.nonRegisteredSubtasks.push(subtaskRegistered);
         }

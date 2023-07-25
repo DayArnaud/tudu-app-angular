@@ -2,7 +2,7 @@
     <label class="custom-checkbox">
         <input type="checkbox" (click)="onCheckboxClick()" [checked]="task.status === 2" />
         <span class="checkbox" *ngIf="showCheckbox"></span>
-        <a class="" [routerLink]="['/view-task', task['_id']['$oid']]">
+        <a [routerLink]="['/view-task', task['_id']['$oid']]">
             <p class="date-style" *ngIf="showDate">Seg, 24</p>
             <div class="clickable-task">
                 <h3>{{task.title}}</h3>

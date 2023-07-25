@@ -33,12 +33,29 @@
     align-items: baseline;
     gap: 1.2rem;
 
-    width: 80%;
+    width: 90%;
 }
 
 .view-task-title {
-    font-size: 1.7rem;
+    font-size: 1.2rem;
     color: var(--salmon);
+}
+
+.container-date {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.container-category {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.icon-task {
+    width: 1rem;
+    height: 1rem;
 }
 
 .subtask {
@@ -46,6 +63,15 @@
     flex-direction: column;
     gap: 1rem;
     list-style: none;
+}
+
+.add-subtask {
+    display: flex;
+    border: none;
+    width: 70%;
+    background-color: transparent;
+    align-items: center;
+    gap: 1rem;
 }
 
 .input-add-subtask {
@@ -59,9 +85,8 @@
 
 .input-add-subtask::placeholder {
     color: var(--black);
-    font-size: 1rem;
+    font-size: .8rem;
 }
-
 
 .line {
     width: 90%;
@@ -79,12 +104,23 @@
     font-size: 1rem;
 }
 
+.input-comment {
+    width: 100%;
+}
 
+.input-comment::placeholder {
+    color: var(--dark-gray);
+}
+
+.form-comment {
+    width: 90%;
+}
 
 .container-comment {
     display: flex;
     align-items: center;
     gap: 1rem;
+    width: 90%;
 }
 
 .name-section {

@@ -1,6 +1,5 @@
 <header class='header private-header'>
     <img class='task-icon' src='../../../assets/return.svg' alt='Ícone para voltar à lista de tarefas'>
-    <img class='task-icon' src='../../../assets/ellipsis.svg' alt='Ícone para página com lista de tarefas'>
 </header>
 
 <div class='view-task-container'>
@@ -8,15 +7,15 @@
         <h1 class='view-task-title'>{{taskDetail.title}}</h1>
         <span>{{taskDetail.description}}</span>
 
-        <div>
-            <img src="" alt="">
+        <div class="container-date">
+            <img class="icon-task" src="../../../assets/gray-calendar.svg" alt="Ícone para acessar a página planner">
             <p>
                 {{ taskDetail.expire_date | date:'d MMMM' }}
             </p>
         </div>
 
-        <div>
-            <img src="" alt="">
+        <div class="container-category">
+            <img class="icon-task" src="../../../assets/tag.svg" alt="Ícone de categoria">
             <p>
                 {{categorySelected[taskDetail.category-1]}}
             </p>
@@ -25,8 +24,7 @@
         <div class='line'></div>
 
         <ul class='subtask'>
-            <app-subtask-action iconAlt='Ícone de checkbox' *ngFor="let subtask of taskDetail.subtask"
-                [subtask]="subtask">
+            <app-subtask-action *ngFor="let subtask of taskDetail.subtask" [subtask]="subtask">
             </app-subtask-action>
         </ul>
 
@@ -37,9 +35,9 @@
             <button type="submit" style="display: none;"></button>
         </form>
 
-
         <div class='line'></div>
-        <form [formGroup]="formComment" (ngSubmit)="registerComment(taskDetail['_id']['$oid'])">
+
+        <form class="form-comment" [formGroup]="formComment" (ngSubmit)="registerComment(taskDetail['_id']['$oid'])">
             <label for="comment"></label>
             <input class='input-comment' type="text" placeholder='Adicionar comentário' name="comment"
                 formControlName='content' />
@@ -60,6 +58,4 @@
     </div>
 </div>
 
-<app-private-footer>
-
-</app-private-footer>
+<app-private-footer></app-private-footer>

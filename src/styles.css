@@ -24,6 +24,15 @@ html {
     --white: #fff;
     --black: #000;
     --gray: #a9a9a9;
+    --dark-gray: #6d6b6b;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}

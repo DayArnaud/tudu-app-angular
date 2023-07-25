@@ -33,7 +33,6 @@ import { SubtaskActionComponent } from './components/subtask-action/subtask-acti
 
 registerLocaleData(pt);
 
-
 @NgModule({
     declarations: [
         AppComponent,

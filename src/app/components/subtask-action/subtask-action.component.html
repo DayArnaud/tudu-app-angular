@@ -1,3 +1,7 @@
 <div class='action-button'>
-    <p> {{ subtask.description }} </p>
+    <input type="checkbox" id="checkbox" [(ngModel)]="subtask.isCompleted">
+    <label for="checkbox"></label>
+    <p [ngStyle]="{'text-decoration': subtask.isCompleted ? 'line-through' : 'none'}">
+        {{ subtask.description }}
+    </p>
 </div>
