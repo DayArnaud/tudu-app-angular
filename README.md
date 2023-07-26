@@ -1,27 +1,123 @@
-# TuduApp
+</p>
+<h4 align="center"> 
+	Tudu App
+</h4>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.5.
+<p align="center">
+	<img alt="Status Concluído" src="https://img.shields.io/badge/STATUS-CONCLUÍDO-green">
+</p>
 
-## Development server
+<p align="center">
+ <a href="#-sobre-o-projeto">Sobre</a> •
+ <a href="#-funcionalidades">Funcionalidades</a> •
+ <a href="#-layout">Layout</a> • 
+ <a href="#-como-executar-o-projeto">Como executar</a> • 
+ <a href="#-tecnologias">Tecnologias</a> • 
+ <a href="#-autora">Autora</a> • 
+ <a href="#user-content--licença">Licença</a>
+</p>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+<br>
 
-## Code scaffolding
+## 💻 Sobre o projeto
+O Tudu App é um aplicativo de tarefas que facilita o seu dia-a-dia, pois ajuda no gerenciamento de tarefas do trabalho, pessoais e de estudos. <br>
+Organize sua rotina com o Tudu.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+<br>
 
-## Build
+---
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## ⚙️ Funcionalidades
 
-## Running unit tests
+- Autenticação de usuários (permite que o usuário crie uma conta e faça login);
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Gestão de Tarefas (permite que o usuário crie, visualize e conclua tarefas);
 
-## Running end-to-end tests
+- Criação de Subtarefas (permite a criação de subtarefas);
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Comentários nas tarefas (permite que o usuário adicione comentários em tarefas);
 
-## Further help
+- Visualização de lista de tarefas a fazer e concluídas;
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Calendário para auxílio na projeção de tarefas.
+
+---
+
+<br>
+
+## Layout
+
+<br>
+  <img alt="Layout feito por DayArnaud" src="./src/assets/Tudu-app.png">
+
+<br>
+
+---
+## 🛣️ Como executar o projeto
+
+Esse App precisa de alguns pré-requisitos para funcionar.
+
+### Pré-requisitos
+
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
+[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/).
+Além disto é bom ter uma IDE para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
+
+#### 🎲 Rodando o app Tudu
+
+```zsh
+
+# Clone este repositório
+$ git clone git@github.com:DayArnaud/tudu-app.git
+
+# Acesse a pasta do projeto no terminal/cmd
+$ cd tudu-app
+
+# Instale as dependências
+$ npm install
+
+# Execute a aplicação em modo de desenvolvimento
+$ npm run dev
+
+# O app inciará na porta:4200 - acesse http://localhost:4200 
+
+## Obs:
+O app vai precisar de uma API para funcionar perfeitamente, acesse este repositório:
+```
+<a href="https://github.com/DayArnaud/tudu-api">Clique para acessar</a>
+
+
+---
+
+## 🛠 Tecnologias
+
+As seguintes ferramentas foram usadas na construção do projeto:
+
+#### []()**Api**  ([NodeJS](https://nodejs.org/en/)  +  [TypeScript](https://www.typescriptlang.org/) + [Angular](https://www.angular.org/))
+
+-   **[Angular](https://angular.org/)**
+-   **[Typescript](https://typescriptlang.org)**
+-   **[Angular Material](https://material.angular.io/)**
+-   **[Taiga-UI](https://taiga-ui.dev/)**
+
+> Veja o arquivo  [package.json](https://github.com/DayArnaud/tudu-app/blob/master/package.json)
+
+---
+
+<br>
+
+## 🧙‍♀️ Autora
+
+<a href="https://www.linkedin.com/in/dayane-arnaud/">
+ <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/122646943?v=4" width="100px;" alt=""/>
+ <br />
+ <sub><b>Dayane Arnaud</b></sub></a>✨</a>
+ <br />
+
+---
+
+## 📝 Licença
+
+<!-- Este projeto esta sobe a licença [MIT](./LICENSE). -->
+
+Feito com ❤️ por Dayane Arnaud [Entre em contato!](https://wa.me/5548999932109)
